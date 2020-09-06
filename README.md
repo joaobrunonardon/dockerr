@@ -6,3 +6,5 @@ Tutorial:
 2) Entre na pasta dockerr cd dockerr
 3) Edite o arquivo data.json com suas credenciais
 4) Execute o comando docker run -it  -v $PWD/data.json:/usr/src/app/data.json joaobruno/docker:1.1
+
+docker run --rm -it -e USERNAME="" -e PASSWORD="" -e CHANNEL="" joaobruno/docker:1.2
