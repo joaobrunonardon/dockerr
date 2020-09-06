@@ -75,6 +75,13 @@ def chat_rules(browser):   # click on chat rules
             print("Its ready to type!")
             pass
 
+def subtemberdismiss(browser):
+    try:
+        browser.find_element_by_css_selector('[aria-label="Dismiss Subtember message"]').click()
+        print("Subtember message dismissed.")
+    except:
+        pass
+
 def type_in_chat(browser, sent): # type in chat
     try:
         browser.find_element_by_tag_name('textarea').send_keys(sent)
@@ -174,7 +181,8 @@ def start_bonus(channel):
     if channel_status(b, channel, False) == True:
         mature_check(b)
         chat_rules(b)
-        # set_low_quality(b)
+        subtemberdismiss(b)
+        set_low_quality(b)
         print("\n---------------------------------- \n\n")
         bonus_start(b, channel)
     print("\n---------------------------------- \n\n")
@@ -184,7 +192,8 @@ def start_idler(channel):
     print("\n\n--------- checking stuff --------- \n")
     mature_check(b)
     chat_rules(b)
-    # set_low_quality(b)
+    subtemberdismiss(b)
+    set_low_quality(b)
     print("\n---------------------------------- \n\n")
     idler(b, channel)
     exit_script()
